@@ -1,0 +1,26 @@
+<div class="container col-md-6">
+    <div class="card-header">
+      <h3 class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif ;">Question</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <input type="hidden" [(ngModel)]="modelPregunta.idpregunta" name="idpregunta" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="" style="font-family: Georgia, 'Times New Roman', Times, serif;">Titulo</label>
+          <input type="text" [(ngModel)]="modelPregunta.titulo" name="titulo" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="" style="font-family: Georgia, 'Times New Roman', Times, serif;">Detalle</label>
+            <input type="text" [(ngModel)]="modelPregunta.detalle" name="detalle" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="" style="font-family: Georgia, 'Times New Roman', Times, serif;">Fecha</label>
+            <input type="datetime-local" [(ngModel)]="modelPregunta.fecha" name="fecha" class="form-control">
+          </div>
+        
+        <button (click)="guardar(modelPregunta)" class="btn btn-secondary mt-2">Guardar</button>
+        <button (click)="cancelar()" class="btn btn-secondary mt-2 ms-4">Cancelar</button> 
+      </form>
+    </div>

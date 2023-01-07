@@ -1,0 +1,28 @@
+
+
+<input type="text" class="form-control mb-2" name= "filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+<button (click)="nuevo()" class="btn btn-warning mb-2">Answer your question</button>
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+    <thead class="text-center" style="background-color:lightgray;">
+    <tr>
+        <!--<th>ID</th>-->
+        <th>Pregunta</th>
+        <th>Respuesta</th>
+        <th>Fecha</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rpta of respuestas | filter:filterPost ">
+    <!--<td>{{servicio.id}}</td> -->
+    <td class="text-center" style="font-style: italic;">{{rpta.pregunta.titulo}}</td>
+    <td class="text-center">{{rpta.detallerpta}}</td>
+    <td class="text-center">{{rpta.fecharpta}}</td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+
+<button (click)="main()" class="btn btn-secondary ms-2">Index</button>
+

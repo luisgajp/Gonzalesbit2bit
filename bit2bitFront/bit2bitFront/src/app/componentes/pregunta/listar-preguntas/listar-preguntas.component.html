@@ -1,0 +1,28 @@
+<h2 class="text-primary text-center">Stack Overflow</h2>
+
+<button (click)="nuevo()" class="btn btn-primary mb-2">Ask Question</button>
+<br>
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+    <thead class="text-center" style="background-color:burlywood;">
+    <tr>
+        <!--<th>ID</th>-->
+        <th>Titulo</th>
+        <th>Detalle</th>
+        <th>Fecha</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pregunta of preguntas">
+    <!--<td>{{servicio.id}}</td> -->
+    <td class="text-center" style="font-style: italic;">{{pregunta.titulo}}</td>
+    <td class="text-center">{{pregunta.detalle}}</td>
+    <td class="text-center">{{pregunta.fecha}}</td>
+    <td class="text-center"><button (click)="answers()" class="btn btn-danger mt-2 ms-4">Answer</button></td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+
+    

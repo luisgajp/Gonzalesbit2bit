@@ -1,0 +1,35 @@
+<div class="container col-md-6">
+    <div class="card-header">
+      <h3 class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif ;">Responder</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <input type="hidden" [(ngModel)]="modelRespuesta.idrpta" name="idrpta" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="" style="font-family: Georgia, 'Times New Roman', Times, serif;">Pregunta</label>
+
+          <div>
+              <select name="pregunta" [(ngModel)]="modelRespuesta.pregunta" class="form-control">
+              <option value="" disabled>Eliga una pregunta</option>
+              <option *ngFor="let pregunta of preguntas" [ngValue]="pregunta">{{pregunta.titulo}}</option>
+              </select>
+          </div>
+          
+        </div>
+
+        <div class="form-group">
+            <label for="" style="font-family: Georgia, 'Times New Roman', Times, serif;">Respuesta</label>
+            <input type="text" [(ngModel)]="modelRespuesta.detallerpta" name="detallerpta" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="" style="font-family: Georgia, 'Times New Roman', Times, serif;">Fecha</label>
+            <input type="datetime-local" [(ngModel)]="modelRespuesta.fecharpta" name="fecharpta" class="form-control">
+          </div>
+        
+        <button (click)="guardar(modelRespuesta)" class="btn btn-secondary mt-2">Guardar</button>
+        <button (click)="cancelar()" class="btn btn-secondary mt-2 ms-4">Cancelar</button> 
+      </form>
+    </div>
